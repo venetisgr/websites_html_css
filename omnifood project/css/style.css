@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* gets applied to all the page*/
+  background: #fff;
+  color: #555;
+  font-family: "Lato", "Arial"; /*arial is the secondary option in case lato isn't available*/
+  font-size: 20px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+/* div (box) properties */
+.row {
+  max-width: 1140px;
+  margin: 0 auto; /* top=bottom=0, left=right=auto meaning our page is centered in the middle */
+}
+/* all the divs with these class will be centered in the middle with the space width */
+
+.box {
+  /*extra properties, added to the boxes inside the grid */
+  padding: 1%; /* space between the boxes */
+}
+.box p {
+  /* all paragraphs inside the grid boxes which include the user defined box class*/
+  font-size: 90%;
+  line-height: 145%;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 240%; /* 240% bigger than the font size defined in html brackets */
+  font-weight: 300; /* how "thick the letters are */
+  letter-spacing: 1px; /*space between letters */
+  word-spacing: 4px; /*space between words */
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 180%; /* 180% bigger than the font size defined in html brackets */
+  font-weight: 300; /* how "thick the letters are */
+  letter-spacing: 1px; /*space between letters */
+  word-spacing: 2px; /*space between words */
+
+  text-transform: uppercase;
+  text-align: center; /*header is in the center */
+}
+
+h2:after {
+  /* ADDS AN UNDERLINE UNDER THE H2 ELEMENTS */
+  display: block;
+  /*block elements always start in a new line */
+  height: 2px;
+  background-color: orange;
+  content: " ";
+  width: 100px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 110%; /* 110% bigger than the font size defined in html brackets */
+  font-weight: 300; /* how "thick the letters are */
+  text-transform: uppercase;
+}
+
+/* we use the clearfix classes after we use float in order not to have any issues */
+/*it clears the float */
+.clearfix {
+  zoom: 1;
+}
+.clearfix {
+  content: ".";
+  clear: both;
+  display: block;
+  /*block elements always start in a new line */
+  height: 0;
+  visibility: hidden;
+}
+a:link,
+a:visited {
+  color: black;
+  text-decoration: none; /*no underline under the libk */
+  padding-bottom: 1px;
+  border-bottom: 1px solid black;
+  transition: border-bottom 0.2, color 0.2;
+}
+
+a:hover,
+a:active {
+  color: pink;
+  border-bottom: 1px solid transparent;
+}
+
+/*  ------------------- HEADER --------------------*/
+
+header {
+  /*header container */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(img/hero.jpg);
+  /*adds a transparent black layer on top of the image */
+  height: 100vh; /*will be as big as the viewpoint (=the part of the page we see when we open the page in the browser) */
+  background-size: cover; /*img isnt zoomed in,we see all of it */
+  background-position: center;
+  /*this way the header(and the img) is as big the page, background image is centered and is not zoomed */
+  background-attachment: fixed;
+}
+
+.logo {
+  height: 100px;
+  width: auto; /*we maintain the aspect ratio by keeping it in auto */
+  float: left;
+  margin-top: 20px;
+}
+
+.main-nav {
+  float: right;
+  list-style: none; /* links wont have bullet points */
+  margin-top: 55px;
+}
+
+/*logo will be on the left side and the options(main nav) will be on the right side of the page */
+
+.main-nav li {
+  /*selects all the li elements inside main nav class/box */
+  display: inline-block; /*links will be side by side */
+  margin-left: 40px; /*margin between them */
+}
+
+.main-nav li a:link,
+.main-nav li a:visited
+/* links will have the same color as before after they are clicked */ {
+  /* links inside li elements that are inside the main-nav class */
+  color: white;
+  text-decoration: none; /* no underline */
+  text-transform: uppercase;
+  letter-spacing: 1px; /*space between letters */
+  word-spacing: 4px; /* space between words */
+  font-size: 90%; /*90 percent of the default font size inside html */
+}
+
+/*using the following, when we hover above or click the links a line will apear bellow them */
+.main-nav li a:hover,
+.main-nav li a:visited {
+  color: white;
+  text-decoration: none; /* no underline */
+  text-transform: uppercase;
+  letter-spacing: 1px; /*space between letters */
+  word-spacing: 4px; /* space between words */
+  font-size: 90%; /*90 percent of the default font size inside html */
+
+  /*using the following, when we hover above the links a line will apear bellow them */
+  padding: 8px 0;
+  border-bottom: 2px solid orange;
+  transition: border-bottom 0.2;
+}
+
+.hero-text-box {
+  /*div element inside the header box */
+  position: absolute;
+  width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* the text will be centered in the middle*/
+}
+
+#first:link, /* how the button will look before it is clicked */
+#first:visited {
+  /* how the button will look after it is clicked, in this case the same as before */
+  display: inline-block; /*button/link will behave as a small  box  */
+  padding: 10px 30px; /* 10 padding on top and bottom 30 padding on left and right */
+  font-weight: 300;
+  text-decoration: none; /*removes underline bellow the text */
+  background-color: orange; /*color of the inside of the "box" */
+  border: 1px solid white; /*how will the border look */
+  border-radius: 200px; /* button will be spherical */
+  color: white; /*color of the text */
+}
+
+#first:hover, /*when i am clicking the button or hovering on top of it */
+#first:active {
+  background-color: rgb(156, 103, 3);
+}
+
+#second:link, /* how the button will look before it is clicked */ 
+#second:visited {
+  /* how the button will look after it is clicked, in this case the same as before */
+  display: inline-block; /*button/link will behave as a small  box  */
+  padding: 10px 30px; /* 10 padding on top and bottom 30 padding on left and right */
+  font-weight: 300;
+  text-decoration: none; /*removes underline bellow the text */
+  background-color: orange; /*color of the inside of the "box" */
+  border: 1px solid white; /*how will the border look */
+  border-radius: 200px; /* button will be spherical */
+  color: white; /*color of the text */
+}
+
+#second:hover, /*when i am clicking the button or hovering on top of it */
+#second:active {
+  background-color: rgb(156, 103, 3);
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+section {
+  padding: 80px 0; /*top=bottom=80px left=right=0 */
+}
+
+.long-copy {
+  line-height: 145%; /*space between two lines */
+  width: 70%;
+  margin-left: 15%;
+  /*30 percent, 15 percent in each side will be left empty,it essentially centers the text */
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.section-meals {
+  padding: 0;
+}
+.meals-showcase {
+  list-style: none; /* links wont have bullet points */
+  width: 100%;
+  display: block;
+  /*block elements always start in a new line */
+  float: left; /*images will be side by side*/
+}
+
+.meals-showcase li {
+  /* the images that will be side by side*/
+  display: block;
+  /*block elements always start in a new line */
+  float: left; /*images will be side by side*/
+  width: 25%;
+}
+
+.meals-showcase figure {
+  width: 100%; /*same width as the parent element, in this case li */
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+.meals-showcase figure img {
+  width: 100%; /*same width as the parent element, in this case figure */
+  margin: 0;
+  transform: scale(1.15);
+  transition: transform 0.5s;
+
+  opacity: 0.7; /* images will be darker, due to opacity and background color */
+}
+.meals-showcase figure img:hover {
+  /* what happens when we hover over the image*/
+  /* image will "pop up " when we hover over the mouse */
+  transform: scale(1.03);
+  opacity: 1; /*image will return to its original brightness */
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.section-steps {
+  background-color: #f4f4f4;
+}
+.steps-box:first-child {
+  /* modifications for the first child(first element that uses the class) of the steps box class */
+  text-align: right;
+  /*image will be alligned to the right side of the box */
+  padding-right: 3%;
+  margin-top: 30px;
+}
+
+.steps-box:last-child {
+  /* modifications for the last child(last element that uses the class) of the steps box class */
+  padding-left: 3%;
+  margin-top: 70px;
+}
+
+.app-screen {
+  width: 40%;
+}
+.works-step {
+  margin-bottom: 50px;
+}
+
+.works-step div {
+  /*affects all div classes inside work step class*/
+  color: orange;
+  border: 2px solid orange;
+  display: inline-block;
+  border-radius: 50%; /*border box will be circular */
+  height: 50px;
+  width: 50px;
+  text-align: center; /*text willl be in the center */
+  padding: 5px;
+  font-size: 150%;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+.btn-app img {
+  /*modifies img element inside btn-app class */
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.box img {
+  width: 100%;
+  /*images will have the width of the box */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.section-testimonials {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(img/back-customers.jpg);
+  background-size: cover;
+  color: white; /*text color */
+  background-attachment: fixed;
+}
+.section-testimonials h2 {
+  color: white;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 25px;
+  display: block;
+  /*block elements always start in a new line */
+}
+cite img {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.btn-ghost:link, /* how the button will look before it is clicked */
+.btn-ghost:visited {
+  /* how the button will look after it is clicked, in this case the same as before */
+  display: inline-block; /*button/link will behave as a small  box  */
+  padding: 10px 30px; /* 10 padding on top and bottom 30 padding on left and right */
+  font-weight: 300;
+  text-decoration: none; /*removes underline bellow the text */
+  background-color: orange; /*color of the inside of the "box" */
+  border: 1px solid white; /*how will the border look */
+  border-radius: 200px; /* button will be spherical */
+  color: white; /*color of the text */
+}
+
+.btn-ghost:hover, /*when i am clicking the button or hovering on top of it */
+.btn-ghost:active {
+  background-color: rgb(156, 103, 3);
+}
+
+.section-plans {
+  background-color: #f4f4f4;
+}
+
+.plan-box {
+  background-color: white;
+  border-radius: 5px;
+  widows: 90%;
+  /* we center it based on its parent */
+  margin-left: 5%;
+}
+
+/*makes the sections more distinct by adding a border arround em */
+.plan-box div {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 15px;
+}
+.plan-box div:last-child {
+  text-align: center;
+}
+
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 10px;
+  font-weight: 100;
+  color: orange;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none; /* no bullet points in each row */
+}
+.plan-box ul li {
+  padding: 5px 0;
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="checkbox"] {
+  margin: 10px 5px 10px 0;
+}
+
+/* ------------------- */
+
+/* ------------------- Section ---------------- */
+
+footer {
+  background-color: black;
+  padding: 60px;
+}
+
+.footer-nav {
+  list-style: none; /* no bullet points */
+  float: left;
+}
+
+.social-links {
+  list-style: none; /* no bullet points */
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin-right: 0px;
+}
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0 auto;
+  color: white;
+  transition: color 0.2;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active,
+.social-links li a:hover,
+.social-links li a:active {
+  text-decoration: none;
+  border: 0 auto;
+  color: orange;
+}
+
+footer p {
+  color: white;
+  text-align: center;
+  font-size: 90%;
+  margin-top: 30px;
+}

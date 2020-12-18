@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* these settings affect all elements unless manually overwritten*/
+}
+
+body {
+  font-family: Arial;
+}
+
+h1 {
+  color: red;
+  font-family: Arial;
+  font-size: 40px;
+  margin-bottom: 20px; /*blank space that will be added each header element */
+}
+
+h2 {
+  color: green;
+  font-family: Arial;
+  font-size: 20px;
+  margin-bottom: 20px; /*blank space that will be added each header element */
+}
+
+p {
+  margin-bottom: 10px; /*blank space that will be added each paragraph element */
+}
+
+.container {
+  /* all sub-areas/boxes are included here */
+  width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  /* having these two margins as auto means that the content of the div is CENTERED at the middle of the webpage */
+  margin-top: 20px; /*space between main div and browser */
+}
+
+.blog-post {
+  background-color: lightblue;
+  width: 75%; /* it will occupy the 75 percent of the width of the parent div */
+  float: left; /*by using float  in these two elements, they will be placed side by side */
+  padding-right: 30px; /*space between the boxes, that space is inside the box, thus the blue empty space*/
+}
+
+.other-posts {
+  background-color: seagreen;
+  width: 25%; /* it will occupy the 25 percent of the width of the parent div */
+  float: left; /*by using float  in these two elements, they will be placed side by side */
+}
+
+.other {
+  margin-bottom: 40px; /*margin between the boxes is 40px */
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.author-box {
+  background-color: yellow;
+  border-top: 10px solid grey;
+  padding-top: 20px; /*space between border and content */
+}
+
+.author-box img {
+  /* it only affects the images inside the author box div */
+  height: 100px;
+  width: 100px;
+  float: left; /*the image and the text will be side by side */
+}
+
+.author-text {
+  float: left; /*the image and the text will be side by side */
+  margin-left: 40px;
+}
